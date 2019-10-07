@@ -5,7 +5,7 @@ class Todos extends Component{
   constructor() {
         super();
         this.state = {
-          dataKegiatan: [
+          dataActivity: [
             'work',
             'swim',
             'study',
@@ -16,7 +16,7 @@ class Todos extends Component{
       }
 
     renderList = () => {
-      return this.state.dataKegiatan.map((key, index) => {
+      return this.state.dataActivity.map((key, index) => {
         return (
           <ListItem icon key={index}>
             <Body>
