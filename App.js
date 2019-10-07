@@ -6,7 +6,7 @@ class Todos extends Component{
         super();
         this.state = {
           inputValue : '',
-          dataKegiatan: [
+          dataActivity: [
             {
               todo: 'work',
               check: true
@@ -40,34 +40,34 @@ class Todos extends Component{
         todo: this.state.inputValue,
         check: false
       };
-      const newDataKegiatan = this.state.dataKegiatan.concat(addData);
-      this.setState({dataKegiatan: newDataKegiatan, inputValue: ''})
+      const newDataActivity = this.state.dataActivity.concat(addData);
+      this.setState({dataActivity: newDataActivity, inputValue: ''})
     }
 
     onDelete = (index) => {
-      const newDataKegiatan = this.state.dataKegiatan.filter((value, idx, arr) => {
+      const newDataActivity = this.state.dataActivity.filter((value, idx, arr) => {
           return (index != idx)
       });
-      this.setState({dataKegiatan: newDataKegiatan})
+      this.setState({dataActivity: newDataActivity})
     }
 
     onCheck = (index) => {
-      const checkingBox = this.state.dataKegiatan.map((key,idx) => {
+      const checkingBox = this.state.dataActivity.map((key,idx) => {
         if (index == idx){
           key.check = !key.check;
         }
         return key 
       });
-      this.setState({dataKegiatan: checkingBox})
+      this.setState({dataActivity: checkingBox})
     }
 
     renderList = () => {
-      return this.state.dataKegiatan.map((key, index) => {
+      return this.state.dataActivity.map((key, index) => {
         return (
           <ListItem icon key={index}>
             <Left>
               <CheckBox checked={key.check} color='green' onPress={() => this.onCheck(index)}/>
-            </Left>
+              </Left>
             <Body>
               <Text>{key.todo}</Text>
             </Body>
