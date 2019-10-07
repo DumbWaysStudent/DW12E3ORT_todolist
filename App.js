@@ -6,7 +6,7 @@ class Todos extends Component{
         super();
         this.state = {
           inputValue : '',
-          dataKegiatan: [
+          dataActivity: [
             'work',
             'swim',
             'study',
@@ -21,12 +21,12 @@ class Todos extends Component{
     }
 
     onClickAdd = () => {
-      const newDataKegiatan = this.state.dataKegiatan.concat(this.state.inputValue)
-      this.setState({dataKegiatan: newDataKegiatan, inputValue: ''})
+      const newDataActivity = this.state.dataActivity.concat(this.state.inputValue)
+      this.setState({dataActivity: newDataActivity, inputValue: ''})
     }
 
     renderList = () => {
-      return this.state.dataKegiatan.map((key, index) => {
+      return this.state.dataActivity.map((key, index) => {
         return (
           <ListItem icon key={index}>
             <Body>
